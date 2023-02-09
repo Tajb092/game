@@ -1,4 +1,5 @@
-my_character = Actor("akbar-fighting stance")
+# Write your code here :-)
+my_character = Actor("akbar-fighting-stance")
 my_character.pos = 100, 50
 
 WIDTH = 500
@@ -20,4 +21,7 @@ def on_mouse_down(pos):
     else:
         print("not cool dude!")
 
-
+def on_mouse_down(pos):
+    if my_character.collidepoint(pos):
+        sounds.karate.play()
+        my_character.image = 'akbar-fighting-stance'
