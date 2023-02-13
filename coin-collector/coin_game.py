@@ -32,6 +32,8 @@ def time_up():
 place_coin()
 
 def update():
+    global score
+
     if keyboard.left:
         fox.x = fox.x - 2
     elif keyboard.right:
@@ -41,3 +43,7 @@ def update():
     elif keyboard.down:
         fox.y = fox.y + 2
 
+    coin_collected = fox.colliderect(coin)
+    if coin_collected:
+        score = score + 10
+        place_coin()
